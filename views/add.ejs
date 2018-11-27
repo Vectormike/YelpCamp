@@ -1,0 +1,26 @@
+
+<% include partials/header %>
+<div class="container">
+    <div class="row">
+        <div style="width:50%; margin:auto; border: 2px solid rgb(123, 123, 226); padding:25px;">
+            <form action="/camps" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="name of campground" id="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="image" placeholder="Image url" alt="Image">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="description" placeholder="Description" alt="Image">
+                </div>
+                <div class="form-group">
+                    <button class="form-control btn btn-dark btn-md" type="submit">Submit</button>
+                </div>
+                <div class="form-group">
+                    <a href="/" class="btn btn-danger" role="button">Go Back</a>
+                </div>   
+            </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>
