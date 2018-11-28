@@ -1,7 +1,10 @@
+<% include partials/header %>
 <h1>Info about this template</h1>
 
 <p><%=campground.name%></p>
 
 <img src="<%=campground.image%>" alt="">
-
+<a class="btn-danger btn-sm" href="/camps/<%=campground.id%>/delete"> <i class="fas fa-trash"></i></a>
 <p><%=campground.description%></p>
+
+<% include partials/footer %>

@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 // const bootstrap = require('bootstrap');
-
+const Campground = require('./models/campground');
 //Connect Mongoose to DB
 mongoose.connect("mongodb://localhost/camp_app", { useNewUrlParser: true });
 
@@ -23,8 +23,6 @@ const campgroundSchema = new mongoose.Schema({
     description: String
 });
 
-// Compile Schema to a model
-const Campground = mongoose.model("Campground", campgroundSchema);
 
 // Campground.create({
 //     name: "Abuja",
@@ -90,17 +88,17 @@ app.get("/camps/:id", function(req, res){
     }); 
 });
 
-// Route for deleting all camps
-app.delete("/camps/:id", function(req, res){
-//Find Id and remove
-Campground.removeById(req.params.id, function(err, deleted){
-        if(err){
-            console.log(err);
-        } else {
-            res.redirect("camps", {campground: deleted});
-        }
-    });
-});
+// // Route for deleting all camps
+// app.delete("/camps/:id/delete", function(req, res){
+// //Find Id and remove
+// Campground.findOneAndDelete(req.params.id, (err, deleted) => {
+//         if(err) {
+//             res.render('camps');
+//         } else {
+//             res.render('camps');
+//         }
+//     });
+// });
 
 app.get("*", function(req, res){
     res.send("Error page");
